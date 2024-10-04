@@ -41,6 +41,7 @@ pipeline {
                 sh '''
                   IMAGE_FULL_NAME=$DOCKER_USERNAME/$IMAGE_BASE_NAME:$IMAGE_TAG
 
+                  cd yolo5/
                   docker build -t $IMAGE_FULL_NAME .
                   docker push $IMAGE_FULL_NAME
                 '''
