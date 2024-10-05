@@ -48,13 +48,13 @@ pipeline {
             }
         }
 
-//         stage('Trigger Deploy') {
-//             steps {
-//                 build job: 'DeployProd', wait: false, parameters: [
-//                     string(name: 'SERVICE_NAME', value: "NetflixMovieCatalog"),
-//                     string(name: 'IMAGE_FULL_NAME_PARAM', value: "$IMAGE_FULL_NAME")
-//                 ]
-//             }
-//         }
+        stage('Trigger Deploy') {
+            steps {
+                build job: 'DeployProdEnv', wait: false, parameters: [
+                    string(name: 'SERVICE_NAME', value: "yolo5"),
+                    string(name: 'IMAGE_FULL_NAME_PARAM', value: "$IMAGE_FULL_NAME")
+                ]
+            }
+        }
     }
 }
