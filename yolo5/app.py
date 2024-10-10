@@ -23,7 +23,7 @@ with open("data/coco128.yaml", "r") as stream:
 def consume():
     while True:
         response = sqs_client.receive_message(QueueUrl=queue_name, MaxNumberOfMessages=1, WaitTimeSeconds=5)
-        logger.info('start processing...')
+        logger.info('start processing request...')
 
         if 'Messages' in response:
             message = response['Messages'][0]['Body']
